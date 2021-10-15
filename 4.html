@@ -28,7 +28,36 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  const numStr = prompt('Введите положительное число')
+  console.log(`Вы ввели: ${numStr}`)
+
+  if (+numStr > 0) {
+    const numStrReverse = numStr.split("").reverse().join("")
+    let n = 0
+    for (let s of numStrReverse) {
+      switch (n) {
+        case 0:
+          console.log(`единиц: ${numStrReverse[n]}`)
+          break
+        case 1:
+          console.log(`десятков: ${numStrReverse[n]}`)
+          break
+        case 2:
+          console.log(`сотен: ${numStrReverse[n]}`)
+          break
+        case 3:
+          console.log(`тысяч: ${numStrReverse[n]}`)
+          break
+        default:
+          console.log(`для данного разряда, кейс не предусмотрен, но значение: ${numStrReverse[n]}`)
+          break
+      }
+      n += 1 
+      // console.log(`шаг ${n}`)
+    }
+  } else {
+    console.log('Было введено не положительное число ')
+  }
 </script>
 </body>
 </html>
