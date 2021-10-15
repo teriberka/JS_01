@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо от пользователя получить число.
+Необходимо вывести разряды числа, а именно: количество сотен, десятков и единиц.
+
+Пример:
+Пользователь ввел число 163. Программа должна вывести:
+"В числе 163 количество сотен: 1, десятков: 6, единиц: 3"
+
+Пример 2:
+Пользователь ввел число 74. Программа должна вывести:
+"В числе 74 количество сотен: 0, десятков: 7, единиц: 4"
+
+Пример 3:
+Пользователь ввел число 9537. Программа должна вывести:
+"В числе 9537 количество сотен: 5, десятков: 3, единиц: 7"
+
+Уточнение: пользователь всегда вводит корректное положительное число.
+-->
+<script>
+  "use strict";
+
+  const numStr = prompt('Введите положительное число')
+  console.log(`Вы ввели: ${numStr}`)
+
+  if (+numStr > 0) {
+    const numStrReverse = numStr.split("").reverse().join("")
+    let n = 0
+    for (let s of numStrReverse) {
+      switch (n) {
+        case 0:
+          console.log(`единиц: ${numStrReverse[n]}`)
+          break
+        case 1:
+          console.log(`десятков: ${numStrReverse[n]}`)
+          break
+        case 2:
+          console.log(`сотен: ${numStrReverse[n]}`)
+          break
+        case 3:
+          console.log(`тысяч: ${numStrReverse[n]}`)
+          break
+        default:
+          console.log(`для данного разряда, кейс не предусмотрен, но значение: ${numStrReverse[n]}`)
+          break
+      }
+      n += 1 
+      // console.log(`шаг ${n}`)
+    }
+  } else {
+    console.log('Было введено не положительное число ')
+  }
+</script>
+</body>
+</html>
