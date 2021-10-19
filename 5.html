@@ -32,6 +32,52 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   "use strict";
 
+  function sum (a, b) {
+    return a + b;
+  }
+
+  function dif (a, b) {
+    if ( a > b) {
+      return a - b;
+    } else if ( b > a ) {
+      return b - a;
+    }
+  }
+
+  function multiplication (a, b) {
+    return a * b;
+  }
+
+  function divide (a, b) {
+    // if ( a > b ) {
+    //   return a / b
+    // } else if ( b > a ) {
+    //   return b / a
+    // }
+    return a / b;
+  }
+
+  function mathOperation (arg1, arg2, operation) {
+    if ( operation === "+" ){
+      return sum(arg1, arg2);
+    } else if ( operation === "-" ) {
+      return dif(arg1, arg2);
+    } else if ( operation === ":" ) {
+      return divide(arg1, arg2);
+    } else if ( operation === "*" ) {
+      return multiplication(arg1, arg2);
+    } else {
+      return NaN
+    }
+  }
+
+  console.log(mathOperation(5, 3, "+")); // 8
+  console.log(mathOperation(15, 8, "-")); // 8
+  console.log(mathOperation(10, 2, ":")); // 8
+  console.log(mathOperation(3, 3, "*")); // 8
+
+  console.log(mathOperation(5, 3, ":)")); // NaN
+  
   // Здесь пишем решение, данный комментарий необходимо стереть.
 </script>
 </body>
