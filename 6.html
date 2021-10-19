@@ -25,6 +25,24 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"); 
 <script>
   "use strict";
 
+  function declinationOfNumber (position, ...theArgs) {
+    console.log('position: ', position);
+    console.log('theArgs.length: ', theArgs.length);
+
+    if ( position <= theArgs.length ) {
+      console.log('true');
+      return theArgs[position - 1];
+    } else {
+      console.log('false');
+      return theArgs[theArgs.length - 1];      
+    }
+  }
+
+  console.log(declinationOfNumber(1, "яблоко", "яблока", "яблок")); // "яблоко"
+  console.log(declinationOfNumber(2, "мяч", "мяча", "мячей")); // "мяча"
+  console.log(declinationOfNumber(5, "стул", "стула", "стульев")); // "стульев"
+
+
   // Здесь пишем решение, данный комментарий необходимо стереть.
 </script>
 </body>
